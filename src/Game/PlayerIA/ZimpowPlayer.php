@@ -17,34 +17,21 @@ class ZimpowPlayer extends Player
 
     public function getChoice()
     {
-        // -------------------------------------    -----------------------------------------------------
-        // How to get my Last Choice           ?    $this->result->getLastChoiceFor($this->mySide) -- if 0 (first round)
-        // How to get the opponent Last Choice ?    $this->result->getLastChoiceFor($this->opponentSide) -- if 0 (first round)
-        // -------------------------------------    -----------------------------------------------------
-        // How to get my Last Score            ?    $this->result->getLastScoreFor($this->mySide) -- if 0 (first round)
-        // How to get the opponent Last Score  ?    $this->result->getLastScoreFor($this->opponentSide) -- if 0 (first round)
-        // -------------------------------------    -----------------------------------------------------
-        // How to get all the Choices          ?    $this->result->getChoicesFor($this->mySide)
-        // How to get the opponent Last Choice ?    $this->result->getChoicesFor($this->opponentSide)
-        // -------------------------------------    -----------------------------------------------------
-        // How to get my Last Score            ?    $this->result->getLastScoreFor($this->mySide)
-        // How to get the opponent Last Score  ?    $this->result->getLastScoreFor($this->opponentSide)
-        // -------------------------------------    -----------------------------------------------------
-        // How to get the stats                ?    $this->result->getStats()
-        // How to get the stats for me         ?    $this->result->getStatsFor($this->mySide)
-        //          array('name' => value, 'score' => value, 'friend' => value, 'foe' => value
-        // How to get the stats for the oppo   ?    $this->result->getStatsFor($this->opponentSide)
-        //          array('name' => value, 'score' => value, 'friend' => value, 'foe' => value
-        // -------------------------------------    -----------------------------------------------------
-        // How to get the number of round      ?    $this->result->getNbRound()
-        // -------------------------------------    -----------------------------------------------------
-        // How can i display the result of each round ? $this->prettyDisplay()
-        // -------------------------------------    -----------------------------------------------------
-        //echo ($this->prettyDisplay());
-        //if ()
-        //return parent::foeChoice();
+        //Le dilemne du prisonnier c'est d'être reglo !
+        //Question morale : Je préfère que moi et mon pote ne faisions que très peu de prison 
+        //plutot que l'un de nous soit en prison une eternité.
+        
+        //MA STRATEGIE
+        //Je commence donc par être amis avec mon pote au premier tour !
 
-        //echo ($this->prettyDisplay());
+        //Puis :
+        //Si au coup d'avant j'ai été amis avec mon pote et que lui aussi c'est très bien je continue à être son pote
+        //Si au coup d'avant j'ai été amis avec mon pote et qu'il m'a trahi alors je joue foe
+        //Si au coup d'avant je l'ai trahi mais qu'il redevient mon pote alors je redeviens son pote direct !
+        //Si au coup d'avant je l'ai trahi mais qu'il continue c'est triste mais je serais dans l'obligation de continuer à le trahir. 
+        //Malheureusement on sait que l'homme est mauvais et qu'il fonctionne comme le dernier cas ... à méditer !
+        
+        //
         if ($this->result->getLastChoiceFor($this->mySide) == "friend" 
         && $this->result->getLastChoiceFor($this->opponentSide) == "friend")
         {
