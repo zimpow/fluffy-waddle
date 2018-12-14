@@ -42,30 +42,31 @@ class FriendPlayer extends Player
         // -------------------------------------    -----------------------------------------------------
 
         //1er coup
-        if ($this->result->getLastChoiceFor($this->mySide) == 0)
-        {
-            return "friend";
-        }
-        
+        //echo ($this->prettyDisplay());
         if ($this->result->getLastChoiceFor($this->mySide) == "friend" 
         && $this->result->getLastChoiceFor($this->opponentSide) == "friend")
         {
             return "friend";
         }
-        if ($this->result->getLastChoiceFor($this->mySide) == "friend" 
+        else if ($this->result->getLastChoiceFor($this->mySide) == "friend" 
         && $this->result->getLastChoiceFor($this->opponentSide) == "foe")
         {
             return "foe";
         }
-        if ($this->result->getLastChoiceFor($this->mySide) == "foe" 
+        else if ($this->result->getLastChoiceFor($this->mySide) == "foe" 
         && $this->result->getLastChoiceFor($this->opponentSide) == "friend")
         {
             return "friend";
         }
-        if ($this->result->getLastChoiceFor($this->mySide) == "foe" 
+        else if ($this->result->getLastChoiceFor($this->mySide) == "foe" 
         && $this->result->getLastChoiceFor($this->opponentSide) == "foe")
         {
             return "foe";
+        }
+        else
+        {
+            //echo ("yooooooooooooooooooo");
+            return "friend";
         }
         //return parent::friendChoice();
     }
