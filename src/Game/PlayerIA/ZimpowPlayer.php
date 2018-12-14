@@ -43,7 +43,11 @@ class ZimpowPlayer extends Player
         //echo ($this->prettyDisplay());
         //if ()
         //return parent::foeChoice();
-        return "friend";
+
+        if (1 == rand(0, 1))
+            return "friend";
+        else
+            return "foe";
     }
  
 };
