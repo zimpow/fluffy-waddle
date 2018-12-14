@@ -44,10 +44,31 @@ class ZimpowPlayer extends Player
         //if ()
         //return parent::foeChoice();
 
-        if (1 == rand(0, 1))
+        //echo ($this->prettyDisplay());
+        if ($this->result->getLastChoiceFor($this->mySide) == "friend" 
+        && $this->result->getLastChoiceFor($this->opponentSide) == "friend")
+        {
             return "friend";
-        else
+        }
+        else if ($this->result->getLastChoiceFor($this->mySide) == "friend" 
+        && $this->result->getLastChoiceFor($this->opponentSide) == "foe")
+        {
             return "foe";
+        }
+        else if ($this->result->getLastChoiceFor($this->mySide) == "foe" 
+        && $this->result->getLastChoiceFor($this->opponentSide) == "friend")
+        {
+            return "friend";
+        }
+        else if ($this->result->getLastChoiceFor($this->mySide) == "foe" 
+        && $this->result->getLastChoiceFor($this->opponentSide) == "foe")
+        {
+            return "foe";
+        }
+        else
+        {
+            return "friend";
+        }
     }
  
 };
