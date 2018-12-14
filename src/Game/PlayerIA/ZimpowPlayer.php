@@ -40,8 +40,10 @@ class ZimpowPlayer extends Player
         // -------------------------------------    -----------------------------------------------------
         // How can i display the result of each round ? $this->prettyDisplay()
         // -------------------------------------    -----------------------------------------------------
-        echo ($this->prettyDisplay());
-        return parent::foeChoice();
+        //echo ($this->prettyDisplay());
+        //if ()
+        //return parent::foeChoice();
+        return "friend";
     }
  
 };
