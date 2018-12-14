@@ -40,8 +40,34 @@ class FriendPlayer extends Player
         // -------------------------------------    -----------------------------------------------------
         // How can i display the result of each round ? $this->prettyDisplay()
         // -------------------------------------    -----------------------------------------------------
- 
-        return parent::friendChoice();
+
+        //1er coup
+        if ($this->result->getLastChoiceFor($this->mySide) == 0)
+        {
+            return "friend";
+        }
+        
+        if ($this->result->getLastChoiceFor($this->mySide) == "friend" 
+        && $this->result->getLastChoiceFor($this->opponentSide) == "friend")
+        {
+            return "friend";
+        }
+        if ($this->result->getLastChoiceFor($this->mySide) == "friend" 
+        && $this->result->getLastChoiceFor($this->opponentSide) == "foe")
+        {
+            return "foe";
+        }
+        if ($this->result->getLastChoiceFor($this->mySide) == "foe" 
+        && $this->result->getLastChoiceFor($this->opponentSide) == "friend")
+        {
+            return "friend";
+        }
+        if ($this->result->getLastChoiceFor($this->mySide) == "foe" 
+        && $this->result->getLastChoiceFor($this->opponentSide) == "foe")
+        {
+            return "foe";
+        }
+        //return parent::friendChoice();
     }
  
 };
